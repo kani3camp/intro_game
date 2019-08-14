@@ -1,22 +1,22 @@
 # intro_game
-オンラインでリアルタイムでイントロクイズの対戦ができるブラウザゲーム
+Online realtime song intro quiz game on browser using firebase realtime database.
 ====
 
-こんな感じ。
+Like this.
 
-注意点
-- 楽曲データは自分で用意してください。著作権のある音源を用いる場合は、個人のみで使用し、音源データを公開しないでください。
-- firebaseの環境構築ができている前提です。
 
 ## Description
-
-## Demo
-
-## VS. 
-
-## Requirement
+- Please prepare the song data by yourself. If you use a copyrighted data, don't use them public.
+- Before use this code, you shoud have done setting your firebase environment. Please change init-firebase.js properly.
 
 ## Usage
+1. Prepare your firebase environment and song data (Each song names are also required).
+2. Place these files in the repository.
+3. Rewrite init-firebase.js for your environment.
+4. Make "audio" folder and place your song data.
+5. Rewrite song_data.js properly.
+6. Deploy the repository.
+
 
 ## Install
 
