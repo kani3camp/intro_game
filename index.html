@@ -1,0 +1,79 @@
+<!doctype html>
+<head>
+  <title>アイマスイントロ（笑）ゲーム</title>
+  <link rel='stylesheet' type='text/css' href='style.css'>
+</head>
+<body>
+  <h1 id='round' style="text-align:center">ロード中...</h1>
+  <p id='challenger' class='challenger'>挑戦者の有無</p>
+  <center>
+    <a id='create' class='btn-square' onclick="createRoom();">招待する</a>
+    <a id='enter' class='btn-square' onclick='joinRoom();'>引き受ける</a>
+    <a id='start' class='btn-square' onclick="onStartClicked();">スタート</a>
+    <a id='enforceStop' class='btn-square' onclick="enforceStop();">やめさせる</a>
+  </center>
+  <br/></br>
+  <section>
+    <center>
+      <p id='btn1' class='btn-flat-border' onclick='onSelected(1);'>曲名1（Fキーで選択）</p>
+      <p id='btn2' class='btn-flat-border' onclick="onSelected(2);">曲名2（Jキーで選択）</p>
+    </center>
+      
+    <center>
+      <p id='btn3' class='btn-flat-border' onclick='onSelected(3);'>曲名3（Vキーで選択）</p>
+      <p id='btn4' class='btn-flat-border' onclick="onSelected(4);">曲名4（Nキーで選択）</p>
+    </center>
+  </section>
+
+  <p class='message' id='message'></p>
+  <p class='message' id='time'></p>
+  <p class='message' id='opponent-info'></p>
+
+  <table border="1" align="center">
+    <tr>
+      <th>Fキー</th>
+      <th>Jキー</th>
+    </tr>
+    <tr>
+      <th>Vキー</th>
+      <th>Nキー</th>
+    </tr>
+  </table>
+  <p class="message">F, V, N, J以外のキーでスタート</p>
+  <center><p class='volume'><input type="range" id="volume" value="10" min="0" max="99"></p></center>
+  <div id="table"></div>
+  <pre class="info">
+    【確認している不具合】
+    ・記録できない
+    ・３人以上でプレイできない
+    ・観戦モードで、序盤の数曲で音が流れないことがある
+    ・観戦モードで、プレイヤー２の結果しか見れない(?)
+  </pre>
+
+
+
+
+  <script>
+    var volume = document.getElementById('volume');
+    volume.addEventListener('change', function () {
+      var volumeValue = (volume.value.length == 1) ? '0.0' + volume.value : '0.' +
+        volume.value;
+        changeVolume(volumeValue);
+      console.log('volume = ', volumeValue);
+    }, false);
+  </script>
+
+  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script defer src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script defer src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/5.10.1/firebase-database.js"></script>
+
+  <script defer src="./init-firebase.js"></script>
+  <script defer type="text/javascript" src="song_data.js"></script>
+  <script defer type="text/javascript" src="game.js"></script>
+
+</body>
