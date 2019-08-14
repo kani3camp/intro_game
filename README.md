@@ -2,8 +2,9 @@
 Online realtime song intro quiz game on browser using firebase realtime database.
 ====
 
-Like this.
+
 ![ss1](https://github.com/sorarideblog/intro_game/blob/jpg/Screen%20Shot%202019-08-14%20at%2017.01.25.png)
+![ss2](https://github.com/sorarideblog/intro_game/blob/jpg/Screen%20Shot%202019-08-14%20at%2017.01.44.png)
 
 
 ## Description
